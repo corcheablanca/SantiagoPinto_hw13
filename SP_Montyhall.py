@@ -35,7 +35,26 @@ def finish_game(lista,choice,change):
 
 
 
-print (finish_game(sort_doors(),choose_door(),True))
+a=0
+for i in range (100):
+	if( "car" ==(finish_game(sort_doors(),choose_door(),True))):
+		a=a+1
+
+b=0
+for i in range (100):
+	if( "car" ==(finish_game(sort_doors(),choose_door(),False))):
+		b=b+1
+
+print "la probabilidad de ganar sin cambiarse es de un "+ str(a)+" %"
+
+print "la probabilidad de ganar cambiandose es de un " +str(b)+" %"
+
+
+
+
+
+
+
 
 
 
