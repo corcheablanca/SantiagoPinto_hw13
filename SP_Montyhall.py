@@ -22,6 +22,7 @@ def reveal_door(lista, choice):
 				lista[t]="GOAT_MONTY"
 				i=i+1	
 		t=t+1	
+	return (lista)
 
 
 def finish_game(lista,choice,change):
@@ -30,24 +31,26 @@ def finish_game(lista,choice,change):
 		
 	else:
 		for i in range (3):
-			if(lista[i]!="GOAT_MONTY" and i!=choice):
+			if((lista[i]!="GOAT_MONTY") and (i!=choice)):
 				return lista[i]
 
 
 
 a=0
 for i in range (100):
-	if( "car" ==(finish_game(sort_doors(),choose_door(),True))):
+        puerta=choose_door()
+	if( "car" ==(finish_game(reveal_door(sort_doors(), puerta),puerta,True))):
 		a=a+1
 
 b=0
 for i in range (100):
-	if( "car" ==(finish_game(sort_doors(),choose_door(),False))):
+	puerta=choose_door()
+	if( "car" ==(finish_game(reveal_door(sort_doors(), puerta),puerta,False))):
 		b=b+1
 
-print "la probabilidad de ganar sin cambiarse es de un "+ str(a)+" %"
+print "la probabilidad de ganar cambiandose es de un "+ str(a)+" %"
 
-print "la probabilidad de ganar cambiandose es de un " +str(b)+" %"
+print "la probabilidad de ganar sin cambiarse es de un " +str(b)+" %"
 
 
 
